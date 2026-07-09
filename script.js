@@ -75,7 +75,7 @@
     currentScreen = name;
 
     if (name === 'accepted') {
-      acceptedTimer = setTimeout(() => showScreen('cuisine'), 2000);
+      acceptedTimer = setTimeout(() => showScreen('cuisine'), 1200);
     }
 
     if (name === 'confirm') {
