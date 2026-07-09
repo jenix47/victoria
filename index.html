@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#f5f0e8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <title>Запрошення на побачення</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Great+Vibes&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="bg-gradient"></div>
+  <div class="particles" aria-hidden="true"></div>
+
+  <main class="app">
+    <!-- Екран 1: Конверт + лист -->
+    <section class="screen screen--active screen--welcome" data-screen="welcome">
+      <div class="welcome-stage" id="welcome-stage">
+   
+        <!-- Сцена конверта -->
+        <div class="envelope-scene" id="envelope-scene">
+          <div class="envelope-premium" id="envelope">
+
+            <div class="envelope-premium__shadow" aria-hidden="true"></div>
+
+            <div class="envelope-premium__back" aria-hidden="true"></div>
+            <div class="envelope-premium__recipient">Для Вікторії </div>
+            <div class="envelope-premium__letter-wrap" id="envelope-letter-wrap">
+              <div class="envelope-premium__letter" id="envelope-letter">
+                <article class="letter-doc" id="letter-doc">
+                  
+                  <h1 class="letter-doc__title">Офіційне запрошення на побачення</h1>
+                  <p class="letter-doc__body" id="letter-typewriter" aria-live="polite"></p>
+                  <p class="letter-doc__instagram" id="instagram-link" style="display: none;">
+                    Instagram:
+                    <a href="https://instagram.com/e.s.4.7" target="_blank">
+                      @e.s.4.7
+                    </a>
+                  </p>
+                  <div class="letter-seal" id="letter-seal" aria-hidden="true">
+                    <span class="letter-seal__ring"></span>
+                    <span class="letter-seal__text">Особисто для Вікторії</span>
+                  </div>
+                  <button
+                    class="btn btn--gold btn--letter-continue"
+                    id="btn-letter-continue"
+                    type="button"
+                  >
+                    Далі
+                  </button>
+                </article>
+              </div>
+            </div>
+
+            <div class="envelope-premium__pocket" aria-hidden="true"></div>
+            <div class="envelope-premium__flap" id="envelope-flap" aria-hidden="true"></div>
+
+            <div class="envelope-premium__face">
+            
+              <p class="envelope-premium__subtitle">Особисте запрошення</p>
+            </div>
+          </div>
+        </div>
+
+        <button class="btn btn--gold btn--open-envelope" id="btn-open-envelope" type="button">
+          Відкрити запрошення
+        </button>
+      </div>
+    </section>
+
+    <!-- Екран 2: Питання -->
+    <section class="screen" data-screen="question">
+      <div class="screen__content screen__content--question">
+        <h2 class="title title--sm">Ви згодні піти зі мною на побачення?</h2>
+        <p class="no-message" id="no-message" aria-live="polite"></p>
+        <div class="btn-group btn-group--question" id="question-zone">
+          <button class="btn btn--primary btn--large" data-next="accepted" type="button">Так</button>
+          <button class="btn btn--ghost btn--small" id="btn-no" type="button">Ні</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Екран: Відмова -->
+    <section class="screen" data-screen="decline">
+      <div class="screen__content screen__content--center">
+        <h2 class="title title--sm">Зрозумів!</h2>
+        <p class="decline-text">Сподіваюсь, що Я хоча б зробив так, щоб Ви посміхнулись. Бажаю Вам гарного майбутнього, впевнений, що Ви цього заслуговуєте.</p>
+      </div>
+    </section>
+
+    <!-- Екран: Згода -->
+    <section class="screen" data-screen="accepted">
+      <div class="screen__content screen__content--center">
+        <p class="accepted-text">
+          <span class="accepted-text__line">Чудово!</span>
+          <span class="accepted-text__line accepted-text__line--sub">Радий, що Ви прийняли моє запрошення.</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- Екран 3: Кухня -->
+    <section class="screen" data-screen="cuisine">
+      <div class="screen__content">
+        <h2 class="title title--sm">Яка Ваша улюблена кухня?</h2>
+        <div class="options options--grid" id="cuisine-options">
+          <button class="option-card option-card--wide" type="button" data-value="Італ'янська">
+            <span class="option-card__emoji">🍝</span>
+            <span class="option-card__label">Італ'янська</span>
+          </button>
+          <button class="option-card option-card--wide" type="button" data-value="Японська">
+            <span class="option-card__emoji">🍣</span>
+            <span class="option-card__label">Японська</span>
+          </button>
+          <button class="option-card option-card--wide" type="button" data-value="Грузинська">
+            <span class="option-card__emoji">🥟</span>
+            <span class="option-card__label">Грузинська</span>
+          </button>
+          <button class="option-card option-card--wide" type="button" data-value="Усі кухні полюбляю">
+            <span class="option-card__emoji">✨</span>
+            <span class="option-card__label">Усі</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Екран 4: Підтвердження -->
+    <section class="screen" data-screen="confirm">
+      <div class="screen__content screen__content--confirm">
+        <h2 class="title title--sm">Чудово</h2>
+        <p class="confirm-text" id="confirm-summary">Тоді узгодимо час та місце через особисті повідомлення.</p>
+        <p class="confirm-footer">До зустрічі!</p>
+        <p class="confirm-signature">
+          <span class="confirm-signature__label">З повагою,</span>
+          <span class="confirm-signature__name">Євген</span>
+        </p>
+      </div>
+      <canvas class="confetti" id="confetti" aria-hidden="true"></canvas>
+    </section>
+  </main>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
